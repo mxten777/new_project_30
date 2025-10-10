@@ -74,55 +74,55 @@ const Reviews = () => {
     <section id="reviews" className="section-padding bg-gray-50">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-display font-black text-gray-900 dark:text-gray-100 tracking-tight">
+        <div className="text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-gray-900 dark:text-gray-100 tracking-tight">
             환자 후기
           </h2>
-          <p className="text-xl font-medium text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl font-medium text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed px-2">
             실제 환자분들의 생생한 치료 후기를 확인해보세요
           </p>
         </div>
 
         {/* Review Categories */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
           {categories.map((category, index) => (
-            <div key={index} className="bg-white rounded-full px-6 py-3 shadow-md">
-              <span className="text-gray-700 font-medium">{category.name}</span>
-              <span className="ml-2 text-ent-primary font-semibold">({category.count})</span>
+            <div key={index} className="bg-white rounded-full px-3 sm:px-6 py-2 sm:py-3 shadow-md">
+              <span className="text-sm sm:text-base text-gray-700 font-medium">{category.name}</span>
+              <span className="ml-1 sm:ml-2 text-sm sm:text-base text-ent-primary font-semibold">({category.count})</span>
             </div>
           ))}
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-12 sm:mb-16">
           {reviews.map((review, index) => (
             <div key={index} className="card-premium relative group hover:scale-105 transition-all duration-500">
               {/* Quote Icon */}
-              <div className="absolute -top-6 -left-6 w-16 h-16 bg-gradient-to-br from-ent-primary to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <Quote className="w-8 h-8 text-white drop-shadow-sm" />
+              <div className="absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-ent-primary to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-white drop-shadow-sm" />
               </div>
 
               {/* Review Header */}
-              <div className="mb-6 pt-4">
-                <div className="flex items-center justify-between mb-3">
+              <div className="mb-4 sm:mb-6 pt-3 sm:pt-4">
+                <div className="flex items-start sm:items-center justify-between mb-3 flex-col sm:flex-row gap-2 sm:gap-0">
                   <div>
-                    <h4 className="font-display font-bold text-gray-900 dark:text-gray-100 text-lg">{review.name}</h4>
+                    <h4 className="font-display font-bold text-gray-900 dark:text-gray-100 text-base sm:text-lg">{review.name}</h4>
                     <p className="text-sm font-medium text-gray-600 dark:text-gray-400 mt-1">
                       {review.age}세 • {review.condition}
                     </p>
                   </div>
-                  <div className="flex items-center space-x-1 bg-yellow-50 dark:bg-yellow-900/20 px-3 py-2 rounded-full">
+                  <div className="flex items-center space-x-1 bg-yellow-50 dark:bg-yellow-900/20 px-2 sm:px-3 py-1 sm:py-2 rounded-full">
                     {renderStars(review.rating)}
                   </div>
                 </div>
-                <p className="text-xs text-gray-400 dark:text-gray-500 font-medium bg-gray-50 dark:bg-gray-700 px-3 py-1 rounded-full inline-block">
+                <p className="text-xs text-gray-400 dark:text-gray-500 font-medium bg-gray-50 dark:bg-gray-700 px-2 sm:px-3 py-1 rounded-full inline-block">
                   {review.date}
                 </p>
               </div>
 
               {/* Review Content */}
-              <div className="mb-6">
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg font-medium italic">
+              <div className="mb-4 sm:mb-6">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg font-medium italic">
                   "{review.comment}"
                 </p>
               </div>

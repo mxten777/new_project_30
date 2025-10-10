@@ -85,23 +85,23 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           exit="exit"
         >
           <motion.div
-            className="bg-white rounded-2xl p-8 max-w-md w-full text-center"
+            className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full text-center"
             variants={modalVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
           >
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <svg className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">예약 완료!</h3>
-            <p className="text-gray-600 mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">예약 완료!</h3>
+            <p className="text-gray-600 mb-4 text-sm sm:text-base">
               예약이 성공적으로 접수되었습니다.<br />
               확인 연락을 드리겠습니다.
             </p>
-            <div className="text-sm text-gray-500">
+            <div className="text-xs sm:text-sm text-gray-500">
               잠시 후 자동으로 닫힙니다...
             </div>
           </motion.div>
@@ -122,7 +122,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
           onClick={onClose}
         >
           <motion.div
-            className="bg-white rounded-2xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-2xl p-4 sm:p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
             variants={modalVariants}
             initial="hidden"
             animate="visible"
@@ -130,32 +130,32 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900">온라인 예약</h2>
-                <p className="text-gray-600">편리하게 진료 예약을 하세요</p>
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
+              <div className="flex-1 mr-4">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900">온라인 예약</h2>
+                <p className="text-gray-600 text-sm sm:text-base">편리하게 진료 예약을 하세요</p>
               </div>
               <button
                 onClick={onClose}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors flex-shrink-0"
               >
-                <X size={24} />
+                <X size={20} className="sm:w-6 sm:h-6" />
               </button>
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* 이름 */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <User size={16} className="inline mr-2" />
+                    <User size={14} className="inline mr-2 sm:w-4 sm:h-4" />
                     이름 *
                   </label>
                   <input
                     type="text"
                     {...register('name', { required: '이름을 입력해주세요' })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent"
+                    className="w-full px-3 py-3 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent text-base"
                     placeholder="홍길동"
                   />
                   {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
@@ -164,7 +164,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                 {/* 전화번호 */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <Phone size={16} className="inline mr-2" />
+                    <Phone size={14} className="inline mr-2 sm:w-4 sm:h-4" />
                     전화번호 *
                   </label>
                   <input
@@ -173,7 +173,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                       required: '전화번호를 입력해주세요',
                       pattern: { value: /^[0-9-]+$/, message: '올바른 전화번호를 입력해주세요' }
                     })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent"
+                    className="w-full px-3 py-3 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent text-base"
                     placeholder="010-1234-5678"
                   />
                   {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
@@ -183,29 +183,29 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
               {/* 이메일 */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <Mail size={16} className="inline mr-2" />
+                  <Mail size={14} className="inline mr-2 sm:w-4 sm:h-4" />
                   이메일
                 </label>
                 <input
                   type="email"
                   {...register('email')}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent"
+                  className="w-full px-3 py-3 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent text-base"
                   placeholder="example@email.com"
                 />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* 날짜 */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <Calendar size={16} className="inline mr-2" />
+                    <Calendar size={14} className="inline mr-2 sm:w-4 sm:h-4" />
                     희망 날짜 *
                   </label>
                   <input
                     type="date"
                     {...register('date', { required: '날짜를 선택해주세요' })}
                     min={new Date().toISOString().split('T')[0]}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent"
+                    className="w-full px-3 py-3 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent text-base"
                   />
                   {errors.date && <p className="text-red-500 text-sm mt-1">{errors.date.message}</p>}
                 </div>
@@ -213,12 +213,12 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                 {/* 시간 */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    <Clock size={16} className="inline mr-2" />
+                    <Clock size={14} className="inline mr-2 sm:w-4 sm:h-4" />
                     희망 시간 *
                   </label>
                   <select
                     {...register('time', { required: '시간을 선택해주세요' })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent"
+                    className="w-full px-3 py-3 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent text-base"
                   >
                     <option value="">시간 선택</option>
                     {timeSlots.map(time => (
@@ -236,7 +236,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                 </label>
                 <select
                   {...register('department', { required: '진료과를 선택해주세요' })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent"
+                  className="w-full px-3 py-3 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent text-base"
                 >
                   <option value="">진료과 선택</option>
                   {departments.map(dept => (
@@ -249,13 +249,13 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
               {/* 증상 */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  <MessageSquare size={16} className="inline mr-2" />
+                  <MessageSquare size={14} className="inline mr-2 sm:w-4 sm:h-4" />
                   증상 및 문의사항
                 </label>
                 <textarea
                   {...register('symptoms')}
-                  rows={4}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent resize-none"
+                  rows={3}
+                  className="w-full px-3 py-3 sm:py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ent-primary focus:border-transparent resize-none text-base sm:rows-4"
                   placeholder="현재 증상이나 문의사항을 자세히 적어주세요"
                 />
               </div>
@@ -265,7 +265,7 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
                 <input
                   type="checkbox"
                   {...register('isFirstVisit')}
-                  className="w-4 h-4 text-ent-primary bg-gray-100 border-gray-300 rounded focus:ring-ent-primary"
+                  className="w-5 h-5 sm:w-4 sm:h-4 text-ent-primary bg-gray-100 border-gray-300 rounded focus:ring-ent-primary"
                   id="firstVisit"
                 />
                 <label htmlFor="firstVisit" className="text-sm text-gray-700">
@@ -274,15 +274,15 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
               </div>
 
               {/* 안내 메시지 */}
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 sm:p-4">
                 <div className="flex">
                   <div className="flex-shrink-0">
-                    <svg className="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                    <svg className="h-4 w-4 sm:h-5 sm:w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <div className="ml-3">
-                    <p className="text-sm text-blue-800">
+                  <div className="ml-2 sm:ml-3">
+                    <p className="text-xs sm:text-sm text-blue-800">
                       <strong>예약 안내:</strong><br />
                       • 예약 후 확인 연락을 드립니다<br />
                       • 진료 30분 전까지 내원해 주세요<br />
@@ -293,18 +293,18 @@ const BookingModal = ({ isOpen, onClose }: BookingModalProps) => {
               </div>
 
               {/* 버튼 */}
-              <div className="flex space-x-4">
+              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                 <button
                   type="button"
                   onClick={onClose}
-                  className="flex-1 py-3 px-4 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="w-full sm:flex-1 py-4 sm:py-3 px-4 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-base sm:text-sm"
                 >
                   취소
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 py-3 px-4 bg-ent-primary text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="w-full sm:flex-1 py-4 sm:py-3 px-4 bg-ent-primary text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-base sm:text-sm"
                 >
                   {isSubmitting ? (
                     <>

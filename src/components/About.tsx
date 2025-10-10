@@ -134,17 +134,17 @@ const About = () => {
         </div>
 
         {/* Achievements */}
-        <AnimatedSection direction="up" className="bg-gradient-to-br from-ent-primary via-blue-600 to-ent-secondary rounded-3xl p-12 mb-20 relative overflow-hidden shadow-2xl">
+        <AnimatedSection direction="up" className="bg-gradient-to-br from-ent-primary via-blue-600 to-ent-secondary rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 mb-20 relative overflow-hidden shadow-2xl">
           {/* Background decoration */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32"></div>
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 -translate-x-24"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 sm:w-64 sm:h-64 bg-white/10 rounded-full -translate-y-16 translate-x-16 sm:-translate-y-32 sm:translate-x-32"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-48 sm:h-48 bg-white/5 rounded-full translate-y-12 -translate-x-12 sm:translate-y-24 sm:-translate-x-24"></div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative z-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-12 relative z-10">
             {achievements.map((achievement, index) => (
               <div key={index} className="text-center text-white group">
-                <div className="relative mb-4">
-                  <div className="text-5xl lg:text-6xl font-display font-black mb-2 leading-none">
+                <div className="relative mb-2 sm:mb-4">
+                  <div className="text-3xl sm:text-4xl lg:text-6xl font-display font-black mb-1 sm:mb-2 leading-none">
                     <CountUp 
                       end={parseInt(achievement.number.replace(/[^0-9]/g, '') || '0')} 
                       suffix={achievement.number.replace(/[0-9]/g, '')}
@@ -153,7 +153,7 @@ const About = () => {
                   </div>
                   
                   {/* Glowing effect */}
-                  <div className="absolute inset-0 text-5xl lg:text-6xl font-display font-black text-white/20 blur-sm group-hover:text-white/40 transition-all duration-500">
+                  <div className="absolute inset-0 text-3xl sm:text-4xl lg:text-6xl font-display font-black text-white/20 blur-sm group-hover:text-white/40 transition-all duration-500">
                     <CountUp 
                       end={parseInt(achievement.number.replace(/[^0-9]/g, '') || '0')} 
                       suffix={achievement.number.replace(/[0-9]/g, '')}
@@ -162,12 +162,12 @@ const About = () => {
                   </div>
                 </div>
                 
-                <div className="text-blue-100 font-semibold text-lg tracking-wide group-hover:text-white transition-colors duration-300">
+                <div className="text-blue-100 font-semibold text-xs sm:text-sm lg:text-lg tracking-wide group-hover:text-white transition-colors duration-300 px-1 leading-tight">
                   {achievement.label}
                 </div>
                 
                 {/* Decorative line */}
-                <div className="w-12 h-1 bg-white/30 rounded-full mx-auto mt-3 group-hover:bg-white/60 group-hover:w-16 transition-all duration-300"></div>
+                <div className="w-8 sm:w-12 h-0.5 sm:h-1 bg-white/30 rounded-full mx-auto mt-2 sm:mt-3 group-hover:bg-white/60 group-hover:w-12 sm:group-hover:w-16 transition-all duration-300"></div>
               </div>
             ))}
           </div>

@@ -56,17 +56,17 @@ const Services = () => {
     <section id="services" className="section-padding bg-gray-50">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-display font-black text-gray-900 dark:text-gray-100 tracking-tight">
+        <div className="text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-gray-900 dark:text-gray-100 tracking-tight">
             전문 진료과목
           </h2>
-          <p className="text-xl font-medium text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl font-medium text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
             선우 이비인후과는 귀, 코, 목 질환의 정확한 진단과 최적의 치료를 제공합니다
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
           {services.map((service, index) => (
             <AnimatedSection
               key={index}

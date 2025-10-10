@@ -79,25 +79,25 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden py-6 border-t bg-white/95 backdrop-blur-sm absolute top-full left-0 right-0 shadow-lg z-50">
+            <nav className="flex flex-col space-y-6 px-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-ent-primary transition-colors duration-200 font-medium"
+                  className="text-gray-700 hover:text-ent-primary transition-colors duration-200 font-semibold text-lg py-2 border-b border-gray-100 last:border-b-0"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
             </nav>
-            <div className="mt-4 pt-4 border-t space-y-2">
-              <div className="flex items-center space-x-2 text-gray-700">
-                <Phone size={18} className="text-ent-primary" />
-                <span className="font-semibold">031-XXX-XXXX</span>
+            <div className="mt-6 pt-6 border-t mx-4 space-y-4">
+              <div className="flex items-center space-x-3 text-gray-700 bg-gray-50 p-3 rounded-lg">
+                <Phone size={20} className="text-ent-primary" />
+                <span className="font-semibold text-lg">031-XXX-XXXX</span>
               </div>
-              <div className="flex items-center space-x-2 text-gray-700">
+              <div className="flex items-center space-x-3 text-gray-700 bg-gray-50 p-3 rounded-lg">
                 <MapPin size={18} className="text-ent-primary" />
                 <span>미금역 3번출구 도보 3분</span>
               </div>
