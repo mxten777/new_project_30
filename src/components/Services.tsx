@@ -53,11 +53,11 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" className="section-padding bg-gray-50">
+    <section id="services" className="py-12 sm:py-16 md:py-20 lg:py-32 bg-gray-50">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center space-y-3 sm:space-y-4 mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-gray-900 dark:text-gray-100 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-display font-black text-gray-900 dark:text-gray-100 tracking-tight">
             전문 진료과목
           </h2>
           <p className="text-lg sm:text-xl font-medium text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">

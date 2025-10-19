@@ -48,17 +48,17 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-32 bg-white">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center space-y-6 mb-20">
-          <div className="inline-flex items-center bg-ent-primary/10 px-8 py-4 rounded-full border border-ent-primary/20 mb-6">
-            <div className="w-3 h-3 bg-ent-primary rounded-full mr-3 animate-pulse"></div>
-            <span className="text-ent-primary font-black text-lg tracking-wider">ABOUT DOCTOR</span>
+        <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-20">
+          <div className="inline-flex items-center bg-ent-primary/10 px-4 sm:px-8 py-2 sm:py-4 rounded-full border border-ent-primary/20 mb-3 sm:mb-6">
+            <div className="w-2 sm:w-3 h-2 sm:h-3 bg-ent-primary rounded-full mr-2 sm:mr-3 animate-pulse"></div>
+            <span className="text-ent-primary font-black text-sm sm:text-lg tracking-wider">ABOUT DOCTOR</span>
           </div>
           
-          <h2 className="text-5xl lg:text-7xl font-display font-black text-gray-900 dark:text-gray-100 tracking-tight leading-none">
-            <span className="block mb-2">전문의가 직접</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-display font-black text-gray-900 dark:text-gray-100 tracking-tight leading-tight sm:leading-none">
+            <span className="block mb-1 sm:mb-2">전문의가 직접</span>
             <span className="bg-gradient-to-r from-ent-primary via-blue-600 to-purple-600 bg-clip-text text-transparent">
               책임지는 진료
             </span>

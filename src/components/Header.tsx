@@ -17,15 +17,15 @@ const Header = () => {
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="container-custom">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-ent-primary to-ent-secondary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">선</span>
+            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-ent-primary to-ent-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+              <span className="text-white font-bold text-base sm:text-lg">선</span>
             </div>
             <div>
-              <h1 className="text-xl font-display font-bold text-gray-900 dark:text-gray-100">선우 이비인후과</h1>
-              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">미금역 3분</p>
+              <h1 className="text-lg sm:text-xl font-display font-bold text-gray-900 dark:text-gray-100 leading-tight">선우 이비인후과</h1>
+              <p className="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400">미금역 3분</p>
             </div>
           </div>
 
@@ -69,37 +69,37 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-1.5 sm:p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="메뉴 열기"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={20} className="sm:w-6 sm:h-6" /> : <Menu size={20} className="sm:w-6 sm:h-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-6 border-t bg-white/95 backdrop-blur-sm absolute top-full left-0 right-0 shadow-lg z-50">
-            <nav className="flex flex-col space-y-6 px-4">
+          <div className="md:hidden py-4 sm:py-6 border-t bg-white/95 backdrop-blur-sm absolute top-full left-0 right-0 shadow-lg z-50">
+            <nav className="flex flex-col space-y-4 sm:space-y-6 px-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-ent-primary transition-colors duration-200 font-semibold text-lg py-2 border-b border-gray-100 last:border-b-0"
+                  className="text-gray-700 hover:text-ent-primary transition-colors duration-200 font-semibold text-base sm:text-lg py-2 border-b border-gray-100 last:border-b-0"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
             </nav>
-            <div className="mt-6 pt-6 border-t mx-4 space-y-4">
-              <div className="flex items-center space-x-3 text-gray-700 bg-gray-50 p-3 rounded-lg">
-                <Phone size={20} className="text-ent-primary" />
-                <span className="font-semibold text-lg">031-XXX-XXXX</span>
+            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t mx-4 space-y-3 sm:space-y-4">
+              <div className="flex items-center space-x-3 text-gray-700 bg-gray-50 p-2 sm:p-3 rounded-lg">
+                <Phone size={16} className="text-ent-primary flex-shrink-0 sm:w-5 sm:h-5" />
+                <span className="font-semibold text-sm sm:text-lg">031-XXX-XXXX</span>
               </div>
-              <div className="flex items-center space-x-3 text-gray-700 bg-gray-50 p-3 rounded-lg">
-                <MapPin size={18} className="text-ent-primary" />
-                <span>미금역 3번출구 도보 3분</span>
+              <div className="flex items-center space-x-3 text-gray-700 bg-gray-50 p-2 sm:p-3 rounded-lg">
+                <MapPin size={16} className="text-ent-primary flex-shrink-0 sm:w-5 sm:h-5" />
+                <span className="text-sm sm:text-base">미금역 3번출구 도보 3분</span>
               </div>
             </div>
           </div>
