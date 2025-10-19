@@ -3,8 +3,8 @@ import { ArrowRight, MapPin, Clock, Phone } from 'lucide-react'
 const Hero = () => {
   return (
     <section id="home" className="gradient-bg text-white py-12 sm:py-16 md:py-20 lg:py-32">
-      <div className="container-custom px-4 sm:px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="space-y-6 sm:space-y-8">
             <div className="space-y-3 sm:space-y-4">
@@ -13,7 +13,7 @@ const Hero = () => {
                 <span className="text-white/90 font-semibold text-xs sm:text-sm">15년 경력 전문의 직접 진료</span>
               </div>
               
-              <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-8xl font-display font-black leading-tight sm:leading-none tracking-tight">
+              <h1 className="text-lg sm:text-xl md:text-3xl lg:text-7xl font-display font-black leading-none tracking-tight" style={{fontSize: 'clamp(1.5rem, 5vw, 3rem)', lineHeight: '1.1'}}>
                 <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
                   선우 이비인후과
                 </span>
